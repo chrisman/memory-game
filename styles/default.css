@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+div {
+  float: left;
+  width: 200;
+  border: solid 2px black;
+}
