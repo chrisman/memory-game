@@ -12,6 +12,9 @@ main {
 
 div {
   float: left;
-  width: 200;
+  width: 200px;
+  height: 150px;
+  margin: 0 auto;
+  padding: 20px;
   border: solid 2px black;
 }
