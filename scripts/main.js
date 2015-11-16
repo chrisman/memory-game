@@ -15,8 +15,18 @@ $(document).ready(function(){
     // console.log($(this).attr('id'));
     if ($(this).hasClass('selected')) {
       $(this).text($(this).attr('id'));
+      selected.push($(this).attr('id'));
+      console.log(selected);
     } else {
-        $(this).text('');
+      $(this).text('');
+      selected.pop();
+      console.log(selected);
+    }
+    if (selected.length >= 2) {
+      setTimeout(function(){
+        $('.selected').text('').removeClass('selected');
+        selected = [];
+      }, 800);
     }
   });
 });
