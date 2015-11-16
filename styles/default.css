@@ -1,22 +1,20 @@
 html, body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-color: #eee;
 }
 
 main {
   margin: 0 auto;
-  width: 80%;
   background-color: #aaa;
 }
 
 div {
   float: left;
-  width: 300px;
-  height: 200px;
-  line-height: 200px;
+  width: 150px;
+  height: 100px;
+  line-height: 100px;
   // vertical alignment trick: set line-height = container height
-  display: none;
 
   margin: 0 auto;
   padding: 20px;

@@ -1,35 +1,54 @@
 var data = {
   corey: ['crazy', 'corey'],
   chris: ['cool', 'chris'],
-  aubrey: ['awesome', 'aubrey']
+  aubrey: ['awesome', 'aubrey'],
+  april: ['angry', 'april'],
+  ben: ['busy', 'ben'],
+  brandon: ['bodacious', 'brandon'],
+  bryce: ['boarding', 'bryce'],
+  helene: ['horrified', 'helene'],
+  jess: ['jittery', 'jess'],
+  joshsn: ['jovial', 'josh'],
+  joshss: ['jammin', 'josh'],
+  june: ['jumpin', 'june'],
+  kinsey: ['kind', 'kinsey'],
+  maria: ['mindful', 'maria'],
+  mikeh: ['moldy', 'mike'],
+  mikew: ['musical', 'mike'],
+  nico: ['nightowl', 'nico'],
+  patj: ['perceptive', 'pat'],
+  patd: ['poor', 'pat'],
+  rach: ['radical', 'rachel'],
+  sam: ['super', 'sam'],
+  sean: ['socially uncomfortabl', 'sean'],
+  stu: ['smarmy', 'stu'],
+  tay: ['talkative', 'taylor'],
+  teisia: ['terrific', 'teisia'],
+  tom: ['tsunami', 'tommy'],
+  tony: ['twisted', 'tony']
 };
 
 $(document).ready(function(){
   var selected = [];
-  // log_data(data);
   var my_divs = make_divs_with_ids(shuffle(get_ids(data)));
   console.log(my_divs);
   $('section').html(my_divs);
   $('div').on('click', function(){
     $(this).toggleClass('selected');
-    // console.log($(this).attr('id'));
     if ($(this).hasClass('selected')) {
       $(this).text($(this).attr('id'));
       selected.push($(this).attr('id'));
-      console.log(selected);
     } else {
       $(this).text('');
       selected.pop();
-      console.log(selected);
     }
     if (selected.length >= 2) {
-      // console.log(selected.sort());
       for (var name in data){
         console.log(data[name].sort().join(''));
         if (selected.sort().join('') == data[name].sort().join('')){
           $('.selected').removeClass('selected').addClass('match');
           setTimeout(function(){
-            $('.match').remove();
+            $('.match').fadeOut(800);
           }, 800);
         } else {
           setTimeout(function(){
