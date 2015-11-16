@@ -23,10 +23,18 @@ $(document).ready(function(){
       console.log(selected);
     }
     if (selected.length >= 2) {
-      setTimeout(function(){
-        $('.selected').text('').removeClass('selected');
-        selected = [];
-      }, 800);
+      // console.log(selected.sort());
+      for (var name in data){
+        console.log(data[name].sort().join(''));
+        if (selected.sort().join('') == data[name].sort().join('')){
+          alert('match');
+        } else {
+          setTimeout(function(){
+            $('.selected').text('').removeClass('selected');
+            selected = [];
+          }, 800);
+        }
+      }
     }
   });
 });
