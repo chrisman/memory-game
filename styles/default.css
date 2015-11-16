@@ -36,5 +36,7 @@ div {
 }
 
 .match {
-  
+  background-color: rgb(184, 68, 134);
+  font-size: xx-large;
+  transition-duration: 0.5s;
 }

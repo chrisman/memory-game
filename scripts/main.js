@@ -27,7 +27,10 @@ $(document).ready(function(){
       for (var name in data){
         console.log(data[name].sort().join(''));
         if (selected.sort().join('') == data[name].sort().join('')){
-          alert('match');
+          $('.selected').removeClass('selected').addClass('match');
+          setTimeout(function(){
+            $('.match').remove();
+          }, 800);
         } else {
           setTimeout(function(){
             $('.selected').text('').removeClass('selected');
