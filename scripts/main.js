@@ -5,11 +5,20 @@ var data = {
 };
 
 $(document).ready(function(){
-  console.log('doc ready');
-  log_data(data);
+  var selected = [];
+  // log_data(data);
   var my_divs = make_divs_with_ids(shuffle(get_ids(data)));
   console.log(my_divs);
   $('section').html(my_divs);
+  $('div').on('click', function(){
+    $(this).toggleClass('selected');
+    // console.log($(this).attr('id'));
+    if ($(this).hasClass('selected')) {
+      $(this).text($(this).attr('id'));
+    } else {
+        $(this).text('');
+    }
+  });
 });
 
 // return an array of div elements containing ids
